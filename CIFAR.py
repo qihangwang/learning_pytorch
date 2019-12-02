@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-#
+
+#-------------------------------------------------------------------------------
+# Name:         CIFAR
+# Description:  
+# Author:       Administrator
+# Date:         2019/12/1
+#-------------------------------------------------------------------------------
+
 import torch  as t
 import torchvision as tv
 import torchvision.transforms as transforms
@@ -10,7 +19,7 @@ transform = transforms.Compose([transforms.ToTensor(),
 trainset = tv.datasets.CIFAR10(
     root = "/tmp/data",
     train = True,
-    download=True,
+    download=False,
     transform = transform
 )
 trainloader = t.utils.data.DataLoader(
@@ -23,7 +32,7 @@ trainloader = t.utils.data.DataLoader(
 testset = tv.datasets.CIFAR10(
     root = "/tmp/data",
     train = False,
-    download=True,
+    download=False,
     transform = transform
 )
 testloader = t.utils.data.DataLoader(
